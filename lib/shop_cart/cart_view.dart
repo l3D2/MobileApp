@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:food_pj/bill.dart';
+import 'package:food_pj/notification.dart';
 import 'package:persistent_shopping_cart/model/cart_model.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 import 'package:food_pj/shop_cart/component/cart_tile_widget.dart';
@@ -89,6 +90,7 @@ class _CartViewState extends State<CartView> {
       'orderItems': order,
       'totalPrice': cart['totalPrice'].toString(),
     };
+    await NotificationHelper.showNotification("Swizky Foods", "ทำการสั่งออเดอร์เรียบร้อย!!");
     PersistentShoppingCart().clearCart();
     Navigator.of(context).push(
       MaterialPageRoute(

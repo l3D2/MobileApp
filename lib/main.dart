@@ -5,11 +5,14 @@ import 'package:food_pj/home.dart';
 import 'package:food_pj/user_info.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
+import 'package:food_pj/notification.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   await PersistentShoppingCart().init();
+  await NotificationHelper.init();
   runApp(const MyApp());
 }
 
@@ -39,3 +42,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
