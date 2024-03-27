@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:food_pj/bill.dart';
 import 'package:food_pj/history.dart';
 import 'package:food_pj/nav_bar.dart';
 import 'package:food_pj/nav_model.dart';
@@ -35,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
       //   navKey: searchNavKey,
       // ),
       NavModel(
-        page: HistoryPage(),
+        page: const HistoryPage(),
         navKey: orderNavKey,
       ),
       // NavModel(

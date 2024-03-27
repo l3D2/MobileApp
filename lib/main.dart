@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/': (context) => LoginPage(),
-        '/register': (context) => RegisterPage(),
-        '/home':(context) => Homepage(),
-        '/uinfo': (context) => PersonalInfoPage()
+        '/': (context) => const LoginPage(),
+        '/register': (context) => const RegisterPage(),
+        '/home':(context) => const Homepage(),
+        '/uinfo': (context) => const PersonalInfoPage()
       },
     );
   }

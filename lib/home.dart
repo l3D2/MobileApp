@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:food_pj/login.dart';
 import 'package:food_pj/drawer.dart';
 import 'package:food_pj/mainscreen.dart';
 
@@ -18,11 +17,11 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Swizky Foods'),
+        title: const Text('Swizky Foods'),
         backgroundColor: Colors.green
       ),
-      drawer: MyDrawerBody(),
-      body: MainScreen()
+      drawer: const MyDrawerBody(),
+      body: const MainScreen()
     );
   }
 }

@@ -44,17 +44,17 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Expanded(
             child: Container(
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(20),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60), // มุมมนด้านบนซ้าย
-                    topRight: Radius.circular(60), // มุมมนด้านบนขวา
+                    topRight: const Radius.circular(60), // มุมมนด้านบนขวา
                   ),
                 ),
                 child: Form(
@@ -79,26 +79,26 @@ class _LoginPageState extends State<LoginPage> {
                             children: [
                               emailTextFormField(),
                               passwordTextFormField(),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               loginButton(),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Text(
+                                  const Text(
                                     "Don't have an account yet?",
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   GestureDetector(
-                                    child: Text(
+                                    child: const Text(
                                       'Sing up',
                                       style: TextStyle(
                                           fontSize: 17,
@@ -149,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
                 if (value.user!.emailVerified) {
                   ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text("Login Pass"),duration: Duration(milliseconds: 500)));
-                  Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => Homepage()),(Route route) => false);
+                  Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => const Homepage()),(Route route) => false);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(content: Text("Please verify email"),duration: Duration(milliseconds: 500)));

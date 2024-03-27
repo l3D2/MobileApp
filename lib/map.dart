@@ -55,7 +55,7 @@ if (permission == LocationPermission.denied) {
           content: Text(message),
           actions: [
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () => Navigator.pop(context),
             ),
           ],
@@ -126,9 +126,9 @@ if (permission == LocationPermission.denied) {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Google Maps'),
+        title: const Text('Google Maps'),
         actions: <Widget>[
-            IconButton(onPressed: () {_SaveLocation(userLocation!.latitude,userLocation!.longitude);}, icon: Icon(Icons.save))
+            IconButton(onPressed: () {_SaveLocation(userLocation!.latitude,userLocation!.longitude);}, icon: const Icon(Icons.save))
         ],
       ),
       body: FutureBuilder(
@@ -145,7 +145,7 @@ if (permission == LocationPermission.denied) {
                   zoom: 15),
             );
           } else {
-            return Center(
+            return const Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[

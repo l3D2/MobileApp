@@ -30,8 +30,8 @@ class _RegisterPageState extends State<RegisterPage> {
               backgroundColor: Colors.blueAccent,
         ),
         body: DecoratedBox(
-            decoration: BoxDecoration(
-              image: DecorationImage(
+            decoration: const BoxDecoration(
+              image: const DecorationImage(
                 image: AssetImage(
                     'assets/img/background.png'), // Your background image path
                 fit: BoxFit.cover, // Adjust fit behavior (e.g., BoxFit.fill)
@@ -42,7 +42,7 @@ class _RegisterPageState extends State<RegisterPage> {
               key: _formstate,
               child: ListView(
                 children: <Widget>[
-                  Center(
+                  const Center(
                     child: Text(
                       'Swizky Foods',
                       style: TextStyle(fontSize: 40.0,fontWeight: FontWeight.bold,color: Colors.white,),
@@ -70,8 +70,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
   ElevatedButton buildRegisterButton() {
     return ElevatedButton.icon(
-      icon: Icon(Icons.app_registration),
-      label: Text('Register'),
+      icon: const Icon(Icons.app_registration),
+      label: const Text('Register'),
       onPressed: () async {
         print('Register new account');
         if (_formstate.currentState!.validate()){
@@ -93,7 +93,7 @@ class _RegisterPageState extends State<RegisterPage> {
             print('Save registration = ' + ref.id);
           }catch (e) {
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text('Error save registration $e'),duration: Duration(milliseconds: 500))
+              SnackBar(content: Text('Error save registration $e'),duration: const Duration(milliseconds: 500))
             );
           }
           ScaffoldMessenger.of(context).showSnackBar(
@@ -102,7 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {
               duration: Duration(milliseconds: 500)
             ),
           );
-          Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => LoginPage()),(Route route) => false);
+          Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => const LoginPage()),(Route route) => false);
         } else {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -131,7 +131,7 @@ class _RegisterPageState extends State<RegisterPage> {
         labelText: 'Password',
         icon: Icon(Icons.lock),
       ),
-      style: TextStyle(color: Colors.black, fontSize: 20),
+      style: const TextStyle(color: Colors.black, fontSize: 20),
     );
   }
 
@@ -155,7 +155,7 @@ class _RegisterPageState extends State<RegisterPage> {
         labelText: 'Password',
         icon: Icon(Icons.lock),
       ),
-      style: TextStyle(color: Colors.black, fontSize: 20),
+      style: const TextStyle(color: Colors.black, fontSize: 20),
     );
   }
 
@@ -176,7 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
         icon: Icon(Icons.email),
         hintText: 'x@x.com',
       ),
-      style: TextStyle(color: Colors.black, fontSize: 20,),
+      style: const TextStyle(color: Colors.black, fontSize: 20,),
     );
   }
 
@@ -203,7 +203,7 @@ class _RegisterPageState extends State<RegisterPage> {
         labelText: 'Name',
         icon: Icon(Icons.person),
       ),
-      style: TextStyle(color: Colors.black, fontSize: 20,),
+      style: const TextStyle(color: Colors.black, fontSize: 20,),
     );
   }
   
@@ -223,7 +223,7 @@ class _RegisterPageState extends State<RegisterPage> {
         labelText: 'Address',
         icon: Icon(Icons.home),
       ),
-      style: TextStyle(color: Colors.black, fontSize: 20,),
+      style: const TextStyle(color: Colors.black, fontSize: 20,),
     );
   }
   
@@ -244,7 +244,7 @@ class _RegisterPageState extends State<RegisterPage> {
         icon: Icon(Icons.phone),
         hintText: '0123456789'
       ),
-      style: TextStyle(color: Colors.black, fontSize: 20,),
+      style: const TextStyle(color: Colors.black, fontSize: 20,),
     );
   }
   

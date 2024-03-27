@@ -1,11 +1,9 @@
 // example's main.dart
 import 'package:flutter/material.dart';
-import 'package:food_pj/shop_cart/component/cart_tile_widget.dart';
 import 'package:persistent_shopping_cart/model/cart_model.dart';
 import 'package:persistent_shopping_cart/persistent_shopping_cart.dart';
 import 'package:food_pj/shop_cart/model/item_model.dart';
 
-import 'shop_cart/component/empty_cart_msg_widget.dart';
 
 class ProductsScreen extends StatelessWidget {
    ProductsScreen({super.key});
@@ -54,7 +52,6 @@ class ProductsScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 5),
                   child: GestureDetector(
                     onTap: () {
-                      print(index);
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => showDetail(id: itemsList[index].productId,name: itemsList[index].productName,description: itemsList[index].productDescription,image: itemsList[index].productThumbnail,price: itemsList[index].unitPrice),
@@ -163,7 +160,7 @@ class ProductsScreen extends StatelessWidget {
 class showDetail extends StatelessWidget {
   final String id,image,name,description;
   final double price;
-  showDetail({Key? key, required this.id, required this.image, required this.name, required this.description, required this.price});
+  const showDetail({Key? key, required this.id, required this.image, required this.name, required this.description, required this.price});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

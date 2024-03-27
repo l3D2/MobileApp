@@ -31,31 +31,31 @@ class _MyDrawerBodyState extends State<MyDrawerBody> {
         padding: EdgeInsets.zero,
         children: <Widget>[
           UserAccountsDrawerHeader(
-            decoration: BoxDecoration(color: Colors.greenAccent),
+            decoration: const BoxDecoration(color: Colors.greenAccent),
             accountName: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 6.0),
+                const Padding(
+                  padding: EdgeInsets.only(right: 6.0),
                   child: Icon(Icons.account_circle),
                 ),
-                Text(_displayName, style: TextStyle(color: Colors.black)),
+                Text(_displayName, style: const TextStyle(color: Colors.black)),
               ],
             ),
             accountEmail: Row(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 6.0),
+                const Padding(
+                  padding: EdgeInsets.only(right: 6.0),
                   child: Icon(Icons.email),
                 ),
-                Text(auth.currentUser?.email ?? 'No email', style: TextStyle(color: Colors.black),),
+                Text(auth.currentUser?.email ?? 'No email', style: const TextStyle(color: Colors.black),),
               ],
             ),
             otherAccountsPictures: [
               GestureDetector(
                 onTap: () => _showEditNamePopup(context),
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   backgroundColor: Colors.white,
-                  child: const Icon(Icons.edit),
+                  child: Icon(Icons.edit),
                 ),
               ),
             ],
@@ -66,22 +66,22 @@ class _MyDrawerBodyState extends State<MyDrawerBody> {
                   child: CircleAvatar(
                     radius: 35,
                     backgroundColor: Colors.white,
-                    child: _image != 'none' ? Image.network(_image ,width: 40, height: 40) : Icon(Icons.person),
+                    child: _image != 'none' ? Image.network(_image ,width: 40, height: 40) : const Icon(Icons.person),
                   ),
                 ),
               ],
             ),
           ),
           ListTile(
-            title: Text('Your Infomation'),
+            title: const Text('Your Infomation'),
             onTap: () => Navigator.pushNamed(context, '/uinfo'),
           ),
           ListTile(
-            title: Text('Logout'),
-            leading: Icon(Icons.exit_to_app),
+            title: const Text('Logout'),
+            leading: const Icon(Icons.exit_to_app),
             onTap: () {
               auth.signOut();
-              Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => LoginPage()),(Route route) => route == LoginPage(),);
+              Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: (context) => const LoginPage()),(Route route) => route == const LoginPage(),);
             },
           ),
         ],
@@ -122,7 +122,7 @@ void onChooseImage(BuildContext context) async {
       showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (context) => Center(child: CircularProgressIndicator()),
+        builder: (context) => const Center(child: CircularProgressIndicator()),
       );
 
       await uploadTask.whenComplete(() => Navigator.pop(context)); // Hide progress indicator

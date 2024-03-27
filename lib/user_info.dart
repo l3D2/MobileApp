@@ -45,7 +45,7 @@ class _PersonalInfoPage extends State<PersonalInfoPage> {
   Stream<QuerySnapshot> getData(String? email) {
     if (email == null || email.isEmpty) {
       // Handle the case where user is not logged in or email is empty
-      return Stream.empty(); // Return an empty stream
+      return const Stream.empty(); // Return an empty stream
     } else {
       return db.collection('user_info').where('email', isEqualTo: email).snapshots();
     }
@@ -67,7 +67,7 @@ class _PersonalInfoPage extends State<PersonalInfoPage> {
             const SizedBox(height: 16),
             Text(
               name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
@@ -83,7 +83,7 @@ class _PersonalInfoPage extends State<PersonalInfoPage> {
             const SizedBox(height: 8),
             Text(
               address,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 16),
             const SizedBox(height: 16),
@@ -94,19 +94,19 @@ class _PersonalInfoPage extends State<PersonalInfoPage> {
             const SizedBox(height: 8),
             Text(
               phoneNum,
-              style: TextStyle(fontSize: 16),
+              style: const TextStyle(fontSize: 16),
             ),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ElevatedButton.icon(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MapsPage())), icon: const Icon(Icons.map), label: Text("Mark location"),),
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton.icon(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => MapsPage())), icon: const Icon(Icons.map), label: const Text("Mark location"),),
                 ),
                 Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: ElevatedButton.icon(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfilePage())), icon: const Icon(Icons.edit), label: Text("Edit Infomation"),)
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton.icon(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const EditProfilePage())), icon: const Icon(Icons.edit), label: const Text("Edit Infomation"),)
                 )              
               ]
             )

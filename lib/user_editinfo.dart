@@ -48,7 +48,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Stream<QuerySnapshot> getData(String? email) {
     if (email == null || email.isEmpty) {
       // Handle the case where user is not logged in or email is empty
-      return Stream.empty(); // Return an empty stream
+      return const Stream.empty(); // Return an empty stream
     } else {
       return db.collection('user_info').where('email', isEqualTo: email).snapshots();
     }
@@ -80,7 +80,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
       try {
         await db.collection('user_info').doc(docID).update(data);
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text('Saved successfully'),
           ),
         );
@@ -166,7 +166,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton.icon(
                     onPressed: () => Navigator.pop(context),
                     icon: const Icon(Icons.cancel),
@@ -174,7 +174,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton.icon(
                     onPressed: () => _SaveProfile(),
                     icon: const Icon(Icons.save),
